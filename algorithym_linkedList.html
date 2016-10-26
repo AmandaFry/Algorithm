@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>This is a hmtl file to use to debug</title>
+	<script>
+		// code goes here
+
+		//this one created a single node
+		function Person(name){
+			this.name=name;
+			this.next=null;
+		}
+
+		// creates a list adding the last item to the front
+		function HumanChain(){
+			this.start = null; //starts with no one
+
+			this.addToFront = function(person){
+				var line = this.start;
+				this.start = person;
+				this.start.next = line;
+				return this;
+			}
+		}
+
+		var person1 = new Person('fruitBat');
+		var person2 = new Person('unicorn');
+		var person3 = new Person('vampire');
+		var chain = new HumanChain();
+
+		chain.addToFront(person1);
+		chain.addToFront(person2);
+		chain.addToFront(person3);
+
+		console.log(chain);
+
+
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
