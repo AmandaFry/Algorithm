@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Algorithm files</title>
+	<meta name="author" content="Amanda Fry ">
+	<link rel="stylesheet" type="text/css" href="./AmandaTemplate.css">
+	<!-- JavaScript code goes here -->
+	<script type="text/javascript">
+    
+    //testing the logic with different array
+    var arr = [1,2,3,4,5] //happy path
+    // var arr = [1, 5, 10, 7, -2] //sample from assignment
+    // var arr = [1,2];
+    // var arr = [3]; //one element
+
+
+    console.log('The original array:', arr);
+
+    //saving off the first element of the array
+    var temp = arr[arr.length-1];
+    console.log(temp);
+
+    for(var i = arr.length-1; i > 0; i--){
+        //over write each element with the next element
+        console.log('the current i', i);
+        arr[i] = arr[i-1];
+    }
+    //this point i should be the array length, I need to over right thelast element with the first element
+    arr[0] = temp;
+    console.log('The new array after shifting is:', arr); 
+   
+    
+	</script>
+   
+</head>
+<body>
+	<div class="container">
+        <div class="header">
+            <h2>Algorithms: Level 1 - Begginers</h1>
+            <h1>Shifting the values in the array (to the right)</h1>
+            <div class="descr">
+                <p>Assigment description:</p>
+                <ul>
+                    <li>Given any array x, say [1, 5, 10, 7, -2], create an algorithm that shifts each number by one to the back.  For example, when the program is done, an x of [1, 5, 10, 7, -2] should become [-2, 1, 5, 10, 7] .</li>
+                    <li>Create a for loop to step through each element of the array</li>
+                    <li>counter i start with 0 as the array first element is 0 not 1</li>
+                    <li>To access the last element of the array is array.length-1</li>
+                </ul>
+            </div>
+        </div><!-- end of header content-->
+        <div class="maincontent">
+        	<h2>Select F12 to view console.log results, code and able to debug</h2>
+        </div><!-- end of main content-->
+        <div class="footer">
+            <p>created by: Amanda Fry</p>
+            <a class="footerSpace" href="mailto:FeAmandaF@hotmail.com">FeAmandaF@hotmail.com</a>
+            <a href="https://www.linkedin.com/in/amandafry1">Amanda's LinkedIn profile</a>
+        </div><!-- end of footer -->
+      </div><!-- end of container -->
+</body>
+</html>
+
