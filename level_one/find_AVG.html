@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Algorithm files</title>
+	<meta name="author" content="Amanda Fry ">
+	<link rel="stylesheet" type="text/css" href="./AmandaTemplate.css">
+	<!-- JavaScript code goes here -->
+	<script type="text/javascript">
+    //testing the logic with different array
+    var maxarray = [4,2,6]; //happy path
+    // var maxarray = [3,1,35,6,7,23,45,6]; //larger array
+    // var maxarray = [3]; //one element
+    // var maxarray = [-10,-5,-1,-4]; //negavite numbers
+    // var maxarray = [1,0,-4,10] //mixed numbers
+    // var maxarray = [2,2,2] //same elements
+
+    var sum = 0;
+    var AVG = 0;
+    //i need to start with 0 to count the first element
+    // i needs to be <= to add the last element
+	for(var i = 0; i <= maxarray.length-1; i++){
+        console.log('the array element ', maxarray[i]);
+        sum = sum + maxarray[i];
+        console.log('new sum ',sum);
+	}
+    //print and AVG calculationneeds to happen after the for loop processed every element
+    AVG = sum/maxarray.length;
+    console.log('number of array element(s)',maxarray.length, 'the avarage number is: ', AVG);
+	</script>
+   
+</head>
+<body>
+	<div class="container">
+        <div class="header">
+            <h2>Algorithms: Level 1 - Begginers</h1>
+            <h1>Print the avarge number of array</h1>
+            <div class="descr">
+                <p>Assigment description:</p>
+                <ul>
+                    <li>Create a for loop to step through each element of the array</li>
+                    <li>counter i start with 0 as the array first element is 0 not 1</li>
+                    <li>To access the last element of the array is array.length-1</li>
+                    <li>Add up all the elements than devide it by the number of the elements</li>
+                </ul>
+            </div>
+        </div><!-- end of header content-->
+        <div class="maincontent">
+        	<h2>Select F12 to view console.log results, code and able to debug</h2>
+        </div><!-- end of main content-->
+        <div class="footer">
+            <p>created by: Amanda Fry</p>
+            <a class="footerSpace" href="mailto:FeAmandaF@hotmail.com">FeAmandaF@hotmail.com</a>
+            <a href="https://www.linkedin.com/in/amandafry1">Amanda's LinkedIn profile</a>
+        </div><!-- end of footer -->
+      </div><!-- end of container -->
+</body>
+</html>
+

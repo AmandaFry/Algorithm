@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Algorithm files</title>
+	<meta name="author" content="Amanda Fry ">
+	<link rel="stylesheet" type="text/css" href="./AmandaTemplate.css">
+	<!-- JavaScript code goes here -->
+	<script type="text/javascript">
+    
+    //testing the logic with different array and y
+    var arr = [1,2,3,4] //happy path
+    // var arr = [1,5,10,-2] //with minus
+    // var arr = [0,0]; //0 value
+    // var arr = [3]; //one element
+    // var arr = [-7,-5,-1,-4]; //negavite numbers
+
+    //There are two way to do this one useing a second array, and replainc the value after squaring it.
+
+    // 1) Using second array
+    var newarr = []
+    var tempOne = 0;
+    //i need to start with 0 to count the first element and condition <= to eveulate last element
+    for(var i = 0; i <= arr.length-1; i++){
+        tempOne = arr[i] * arr[i];
+        newarr.push(tempOne);
+    }
+
+    //print needs to happen after the for loop processed every element
+    console.log('Squear value is in a new array', newarr)
+ 
+
+    //2) reusing the same array less memory space in memorey
+    var temp = 0;
+    for(var i = 0; i<= arr.length-1; i++){
+        temp = arr[i] * arr[i];
+        arr[i]= temp;
+    }
+    console.log('Squear value is replaced in the same array', arr)
+    
+	</script>
+   
+</head>
+<body>
+	<div class="container">
+        <div class="header">
+            <h2>Algorithms: Level 1 - Begginers</h1>
+            <h1>Square value</h1>
+            <div class="descr">
+                <p>Assigment description:</p>
+                <ul>
+                    <li>Given any array x, say [1, 5, 10, -2], create an algorithm (sets of instructions) that multiplies each value in the array by itself.  When the program is done, the array x should have values that have been squared, say [1, 25, 100, 4].</li>
+                    <li>Create a for loop to step through each element of the array</li>
+                    <li>counter i start with 0 as the array first element is 0 not 1</li>
+                    <li>To access the last element of the array is array.length-1</li>
+                </ul>
+            </div>
+        </div><!-- end of header content-->
+        <div class="maincontent">
+        	<h2>Select F12 to view console.log results, code and able to debug</h2>
+        </div><!-- end of main content-->
+        <div class="footer">
+            <p>created by: Amanda Fry</p>
+            <a class="footerSpace" href="mailto:FeAmandaF@hotmail.com">FeAmandaF@hotmail.com</a>
+            <a href="https://www.linkedin.com/in/amandafry1">Amanda's LinkedIn profile</a>
+        </div><!-- end of footer -->
+      </div><!-- end of container -->
+</body>
+</html>
+

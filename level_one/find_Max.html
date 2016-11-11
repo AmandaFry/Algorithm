@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Algorithm files</title>
+	<meta name="author" content="Amanda Fry ">
+	<link rel="stylesheet" type="text/css" href="./AmandaTemplate.css">
+	<!-- JavaScript code goes here -->
+	<script type="text/javascript">
+    //testing the logic with different array
+    var maxarray = [3,1,35,6,7,23,45,6]; //happy path
+    // var maxarray = [3]; //one element
+    // var maxarray = [0,0,0,0]; //same values
+    // var maxarray = [1,3,0,5]; //last element is max
+    // var maxarray = [-10,-5,-1,-4]; //negavite numbers
+
+    var max = maxarray[0];
+    //if i is only < to maxarray.length-1 the last element is not eveluated. Need to chaneg to <=
+    //i is set to 1 as there is no need to compare array element 0 with itself
+	for(var i = 1; i <= maxarray.length-1; i++){
+        //if the array element is higher repalce the current max number
+        if(max < maxarray[i]){
+            max = maxarray[i];
+        }
+	}
+    //print needs to happen after the for loop processed every element
+    console.log('the max number is: ', max);
+	</script>
+   
+</head>
+<body>
+	<div class="container">
+        <div class="header">
+            <h2>Algorithms: Level 1 - Begginers</h1>
+            <h1>Print maximum value in an array</h1>
+            <div class="descr">
+                <p>Assigment description:</p>
+                <ul>
+                    <li>Create a for loop to step through each element of the array</li>
+                    <li>counter i start with 0 as the array first element is 0 not 1</li>
+                    <li>To access the last element of the array is array.length-1</li>
+                    <li>Need to create a variable to hold the max value and assigne it the first element of the array. If it is the largest number than return it, if not the the max value will be replaced.</li>
+                </ul>
+            </div>
+        </div><!-- end of header content-->
+        <div class="maincontent">
+        	<h2>Select F12 to view console.log results, code and able to debug</h2>
+        </div><!-- end of main content-->
+        <div class="footer">
+            <p>created by: Amanda Fry</p>
+            <a class="footerSpace" href="mailto:FeAmandaF@hotmail.com">FeAmandaF@hotmail.com</a>
+            <a href="https://www.linkedin.com/in/amandafry1">Amanda's LinkedIn profile</a>
+        </div><!-- end of footer -->
+      </div><!-- end of container -->
+</body>
+</html>
+

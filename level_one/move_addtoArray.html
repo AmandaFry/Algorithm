@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Algorithm files</title>
+	<meta name="author" content="Amanda Fry ">
+	<link rel="stylesheet" type="text/css" href="./AmandaTemplate.css">
+	<!-- JavaScript code goes here -->
+	<script type="text/javascript">
+    //testing the logic with different array
+    var arr = [1,2,3,4,5,6,7] //happy path
+    // var arr = [4,2,0,6]; //no odd numbers
+    // var arr = [1,3,5]; //only odd numbers
+    // var arr = [3]; //one element odd
+    // var arr = [4]; //one element even
+    // var arr = [-10,-5,-1,-4]; //negavite numbers
+    // var arr = [3,0,-4,10,-5]; //mixed numbers
+
+    var oddarr = [] //create new array to hold odd numbers
+    //i need to start with 0 to count the first element and condition <= to eveulate last element
+	for(var i = 0; i <= arr.length-1; i++){
+        //using modulus is the remainder is not 0 then the number is odd
+        if(arr[i]%2 != 0){
+            //.push adds the current element to end of the array
+            oddarr.push(arr[i]);
+        }
+	}
+
+    //print needs to happen after the for loop processed every element
+    //using oddarr legnth I can eveulate if the array is empty, if it is then there were no odd numbers
+    if (oddarr.length > 0){
+        console.log('The odd number(s) in the array is', oddarr);
+    }
+    else{
+        console.log('There was no odd number in the given array')
+    }
+    
+	</script>
+   
+</head>
+<body>
+	<div class="container">
+        <div class="header">
+            <h2>Algorithms: Level 1 - Begginers</h1>
+            <h1>Given any array, create a new array and move only the add numbers to new array</h1>
+            <div class="descr">
+                <p>Assigment description:</p>
+                <ul>
+                    <li>Create a for loop to step through each element of the array</li>
+                    <li>counter i start with 0 as the array first element is 0 not 1</li>
+                    <li>To access the last element of the array is array.length-1</li>
+                </ul>
+            </div>
+        </div><!-- end of header content-->
+        <div class="maincontent">
+        	<h2>Select F12 to view console.log results, code and able to debug</h2>
+        </div><!-- end of main content-->
+        <div class="footer">
+            <p>created by: Amanda Fry</p>
+            <a class="footerSpace" href="mailto:FeAmandaF@hotmail.com">FeAmandaF@hotmail.com</a>
+            <a href="https://www.linkedin.com/in/amandafry1">Amanda's LinkedIn profile</a>
+        </div><!-- end of footer -->
+      </div><!-- end of container -->
+</body>
+</html>
+
