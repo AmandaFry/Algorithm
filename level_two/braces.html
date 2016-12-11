@@ -7,31 +7,81 @@
 	<link rel="stylesheet" type="text/css" href="./AmandaTemplate.css">
 	<!-- JavaScript code goes here -->
 	<script type="text/javascript">
-    //testing the logic with different array
-    var mystring = "{}" //happy path min and max not in the end
-    // var arr = [1,5,10,12] //min and max in ends
-    // var arr = [12,5,10,1] //min and max in ends
-    // var arr = [2,2,2]; //same values
-    // var arr = [22,22,25] //same minimum
-    // var arr = [22,22,5] //same maximum
-    // var arr = [3]; //one element
-    // var arr = [-7,-5,-1,-4]; //negavite numbers
+
+    //testing cases
+    // var mystring = "{}"; //happy path 
+    // var mystring = "()"; //happy path
+    // var mystring = "[]"; //happy path
+    // var mystring = "{}()[]"; //happy path
+    // var mystring = "}{)(]["; //happy path
+    // var mystring = "{([])}"; //happy path  
+    // var mystring = ""; //error checking - blank string  
+    // var mystring = "{(["; //error checking - only open ending 
+    // var mystring = "})]"; //error checking - only closed ending
+    var mystring = "abchsd"; //error checking - no braces
+    // var mystring = "adndkfldmf)"; //error checking - only one brace within string
 
     function Brace(mystring){
+        var countOne = 0;
+        var countTwo = 0;
+        var countThree = 0;
+        var countAll = 0;
 
+        //if the string is empty than no point to go anyfurther
+        if (mystring.length-1 < 1){
+            console.log('The input string cannot be empty');
+            return;
+        }
 
         for(var i = 0; i<= mystring.length-1; i++){
-            // console.log("line ", i);
+           //check for each brace type. 
+           //For each brace type I use a counter if the count iss other than 0 there is not a match
+           // the intrcution was not clear enough to make sure the opeining brace needs to be come before 
+           // closing brace, therefore this code will not track that. 
+           // I added countAll to see if any of the brace 
+           //counter changes, if not than there was no braces that way it will not give false positive
+
             if (mystring[i] == "{"){
-                console.log('I got {'); 
+                countOne++;
+                countAll++;
             }
-            else{
-               console.log("line ", i);
+            else if(mystring[i] == "}"){
+                countOne--;
+                countAll++;
+            }
+            else if(mystring[i] == "("){
+               countTwo++;
+               countAll++;
+            }
+            else if(mystring[i] == ")"){
+                countTwo--;
+                countAll++;
+            }
+            else if(mystring[i] == "["){
+               countThree++;
+               countAll++;
+            }
+            else if(mystring[i] == "]"){
+                countThree--;
+                countAll++;
             }
         }
+        console.log('counts', countOne, countTwo,countThree);
+        if(countAll == 0){
+            //if countAll still 0 then there was no braket at all
+            console.log('There were no braces in the input string');
+        }
+        else{
+            if (countOne == 0 && countTwo == 0 && countThree == 0){
+                console.log('All braces has matching braces');
+             }
+            else{
+                console.log('There was one or more not matching braces');
+            }
+        }      
     }
     
-    Brace(mystring);
+    Brace(mystring);//calling the function
 
 	</script>
    
