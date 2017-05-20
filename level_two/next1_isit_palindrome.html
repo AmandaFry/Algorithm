@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Algorithm files</title>
+	<meta name="author" content="Amanda Fry ">
+	<link rel="stylesheet" type="text/css" href="./AmandaTemplate.css">
+	<!-- JavaScript code goes here -->
+	<script type="text/javascript">
+    
+    //testing the logic with different array
+    var my_number = '12321' //happy path min and max not in the end
+    // var my_number = [1,5,10,12] //min and max in ends
+    // var my_number = [12,5,10,1] //min and max in ends
+    // var my_number = [2,2,2]; //same values
+    // var my_number = [22,22,25] //same minimum
+    // var my_number = [22,22,5] //same maximum
+    // var my_number = [3]; //one element
+    // var my_number = [-7,-5,-1,-4]; //negavite numbers
+
+    //NOTE:- I went down a rabbit whole look at this sites for help
+    //http://stackoverflow.com/questions/19801081/find-all-substrings-that-are-palindromes
+    //http://www.journaldev.com/530/java-program-to-find-out-longest-palindrome-in-a-string
+    //http://stackoverflow.com/questions/1115001/write-a-function-that-returns-the-longest-palindrome-in-a-given-string
+    //http://www.geeksforgeeks.org/longest-palindrome-substring-set-1/
+
+    function Palindrome(my_number){
+        var reversed_number = my_number[my_number.length-1];
+        var count = my_number.length-1;
+
+        for(var i = my_number.length-2; i>= 0; i--){
+            //not the best way because I am using a second number, but this works. We are also taking about very small amount of space
+            reversed_number= reversed_number + my_number[i];
+        }
+        //this is the number I have after reversing the numbers
+        console.log(reversed_number);
+
+        for(var i = 0; i<= count; i++){
+
+            if (my_number == reversed_number){
+                console.log('the biggest palindrome number is: ', reversed_number);
+                break;
+            }
+            else{
+                console.log('need to look for other number' );
+            }
+
+            reversed_number = 
+            my_number = my_number 
+
+        }
+
+       
+    }   
+
+    Palindrome(my_number);
+	</script>
+   
+</head>
+<body>
+	<div class="container">
+        <div class="header">
+            <h2>Algorithms: Level 2 - Intermediate</h2>
+            <h1>Largest Palindrome</h1>
+            <div class="descr">
+                <p>Given a string find the largest palindrome in the string. A palindromic number or numeral palindrome is a number that remains the same when its digits are reversed. Like 16461, for example, it is "symmetrical".</p>
+                <ul>
+                    <li>One way to do is step thorugh the entire number and flip it first</li>
+                    <li>Then compare the original number if it is the same.</li>
+                    <li>If yes that is the largest palindrome number if not take one off and compare again until you get to 1 number</li>
+                    <li>There must be a way to optimize this I am sure, not </li>
+                </ul>
+            </div>
+        </div><!-- end of header content-->
+        <div class="maincontent">
+        	<h2>Select F12 to view console.log results, code and able to debug</h2>
+        </div><!-- end of main content-->
+        <div class="footer">
+            <p>created by: Amanda Fry</p>
+            <a class="footerSpace" href="mailto:FeAmandaF@hotmail.com">FeAmandaF@hotmail.com</a>
+            <a href="https://www.linkedin.com/in/amandafry1">Amanda's LinkedIn profile</a>
+        </div><!-- end of footer -->
+      </div><!-- end of container -->
+</body>
+</html>
+

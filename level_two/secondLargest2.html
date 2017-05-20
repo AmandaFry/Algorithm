@@ -1,0 +1,21 @@
+function find_second_largest(listl) { 
+  var tempLarge= list1[0];
+  var tempSecLa = list1[0];
+  
+  for(var i = 0; i < list1.length; i++ ){
+    
+     if (list1[i] > tempLarge)
+     {
+       tempSecla = tempLarge;
+       tempLarge = list1[i];
+     }
+    
+  }
+   
+  return tempSecLa;
+}
+
+
+var list1 = [59, 3, 5, 100, 23, 6 ]
+
+find_second_largest(list1)

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Algorithm files</title>
+	<meta name="author" content="Amanda Fry ">
+	<link rel="stylesheet" type="text/css" href="./AmandaTemplate.css">
+	<!-- JavaScript code goes here -->
+	<script type="text/javascript">
+
+    //this function does not need input
+    //Add all the values between 100 and 4000000 inclusively that are divisible by 3 or 5 but not both 3 and 5.
+    //1.  I am going to use smaller set of numbers and print out the answers that are divided by 3 and 5. Probably between 1-500. Then add them together.
+    //2. Print numbers where the number is divided by 3 and remainder is 0
+    //3. Print/select numbers that are divided by 5 and the remainder is 0 
+    //4. If the number is divided by 15 then skip it 
+    //5. Once I selected the correct numbers then I can add them together
+    //6. once the logic is worked changed the range from 100- 4000000
+
+
+    function threesandfives(){
+        // this is used to add the divided numbers togather
+        var total = 0;
+
+        for(var i = 100; i<401; i++){
+            //using modulus
+            if(i%15 == 0){
+                console.log("skipped divided by 15", i);
+            }
+            else{
+               if(i%3 == 0){
+                    console.log("divided by 3", i);
+                    total = total +i;
+                }
+                if(i%5 == 0){
+                    console.log("divided by 5", i);
+                    total = total +i;
+                } 
+            }
+            console.log("the current total is: ", total);
+        }
+       
+    }    
+
+    threesandfives();
+	</script>
+   
+</head>
+<body>
+	<div class="container">
+        <div class="header">
+            <h2>Algorithms: Level 2 - Intermediate</h1>
+            <h1>Add up numbers that devided by 3 and 5 but not both</h1>
+            <div class="descr">
+                <p>Add all the values between 100 and 4000000 inclusively that are divisible by 3 or 5 but not both 3 and 5.</p>
+                <p>Approch:</p>
+                <ul>
+                    <li>I am going to use smaller set of numbers and print out the answers that are divided by 3 and 5. Probably between 1-500. Then add them together.</li>
+                    <li>Print numbers where the number is divided by 3 and remainder is 0, use modulas</li>
+                    <li>Print/select numbers that are divided by 5 and the remainder is 0 </li>
+                    <li>If the number is divided by 15 then skip it</li>
+                    <li>Once I selected the correct numbers then I can add them together</li>
+                    <li>Once the logic is worked changed the range from 100- 4000000</li>
+                </ul>
+            </div>
+        </div><!-- end of header content-->
+        <div class="maincontent">
+        	<h2>Select F12 to view console.log results, code and able to debug</h2>
+             <div id="myqoute">
+                <h2>"A day when you did not laugh is a day waisted ...</h2>
+                <h2 class="tocenter">... live well, love much and laugh often"</h2>
+                <h3 class="toright">Amanda Fry</h3>
+            </div>
+        </div><!-- end of main content-->
+        <div class="footer">
+            <p>created by: Amanda Fry</p>
+            <a class="footerSpace" href="mailto:FeAmandaF@hotmail.com">FeAmandaF@hotmail.com</a>
+            <a href="https://www.linkedin.com/in/amandafry1">Amanda's LinkedIn profile</a>
+        </div><!-- end of footer -->
+      </div><!-- end of container -->
+</body>
+</html>
+

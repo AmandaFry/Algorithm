@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Algorithm files</title>
+	<meta name="author" content="Amanda Fry ">
+	<link rel="stylesheet" type="text/css" href="./AmandaTemplate.css">
+	<!-- JavaScript code goes here -->
+	<script type="text/javascript">
+
+    //testing cases
+    // var mystring = "{}"; //happy path 
+    // var mystring = "()"; //happy path
+    // var mystring = "[]"; //happy path
+    // var mystring = "{}()[]"; //happy path
+    // var mystring = "}{)(]["; //happy path
+    // var mystring = "{([])}"; //happy path 
+    var mystring = "{{{{{ }ab";
+    // var mystring = ""; //error checking - blank string  
+    // var mystring = "{(["; //error checking - only open ending 
+    // var mystring = "})]"; //error checking - only closed ending
+    // var mystring = "abchsd"; //error checking - no braces
+    // var mystring = "adndkfldmf)"; //error checking - only one brace within string
+
+    function Brace(mystring){
+        var countOne = 0;
+        var countTwo = 0;
+        var countThree = 0;
+        var countAll = 0;
+
+        //if the string is empty than no point to go anyfurther
+        if (mystring.length-1 < 1){
+            console.log('The input string cannot be empty');
+            return;
+        }
+
+        for(var i = 0; i<= mystring.length-1; i++){
+           //check for each brace type. 
+           //For each brace type I use a counter if the count iss other than 0 there is not a match
+           // the intrcution was not clear enough to make sure the opeining brace needs to be come before 
+           // closing brace, therefore this code will not track that. 
+           // I added countAll to see if any of the brace 
+           //counter changes, if not than there was no braces that way it will not give false positive
+
+           //When using else if it will check every option, with switch it should stop once it found the correct 
+           //info, that should be more optimized
+
+           switch (mystring[i]){
+                case "{":
+                    countOne++;
+                    countAll++;
+                    console.log('inside case 1')
+                    break;
+                case "}":
+                    countOne--;
+                    countAll++;
+                    console.log('inside case 2')
+                    break;
+                case "(":
+                   countTwo++;
+                   countAll++;
+                   console.log('inside case 3')
+                   break;
+                case ")":
+                   countTwo--;
+                   countAll++;
+                   console.log('inside case 4')
+                   break;
+                case "[":
+                   countThree++;
+                   countAll++;
+                   console.log('inside case 5')
+                   break;
+                case "]":
+                   countThree--;
+                   countAll++;
+                   console.log('inside case 6')
+                   break;                   
+                default:
+                //in this case nothing that needs to happen, but it is good practice to have a default case
+                    console.log('default')
+           }
+            
+        }
+        console.log('counts', countOne, countTwo,countThree);
+        if(countAll == 0){
+            //if countAll still 0 then there was no braket at all
+            console.log('There were no braces in the input string');
+        }
+        else{
+            if (countOne == 0 && countTwo == 0 && countThree == 0){
+                console.log('All braces has matching braces');
+             }
+            else{
+                console.log('There was one or more not matching braces');
+            }
+        }      
+    }
+    
+    Brace(mystring);//calling the function
+
+	</script>
+   
+</head>
+<body>
+	<div class="container">
+        <div class="header">
+            <h2>Algorithms: Level 2 - Intermediate</h1>
+            <h1>Braces</h1>
+            <div class="descr">
+                <p>Assigment description:</p>
+                <ul>
+                    <li>Given an N different open and close braces in a string "( { [ } ] )", check whether the string has matching braces. Return true if the braces match, false otherwise.</li>
+                </ul>
+            </div>
+        </div><!-- end of header content-->
+        <div class="maincontent">
+        	<h2>Select F12 to view console.log results, code and able to debug</h2>
+           <div id="myqoute">
+                <h2>"A day when you did not laugh is a day waisted ...</h2>
+                <h2 class="tocenter">... live well, love much and laugh often"</h2>
+                <h3 class="toright">Amanda Fry</h3>
+            </div>
+        </div><!-- end of main content-->
+        <div class="footer">
+            <p>created by: Amanda Fry</p>
+            <a class="footerSpace" href="mailto:FeAmandaF@hotmail.com">FeAmandaF@hotmail.com</a>
+            <a href="https://www.linkedin.com/in/amandafry1">Amanda's LinkedIn profile</a>
+        </div><!-- end of footer -->
+      </div><!-- end of container -->
+</body>
+</html>
+

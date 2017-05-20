@@ -39,9 +39,23 @@
 		padding: 25px;
 		/*text-align: center;*/
 	}
-
+		#myqoute{
+			/*  top right bottom left*/
+			margin: 50px 0px 0px 80px;
+			color: blue;
+		}
 		.onRight{
 			margin: 10px 0px 20px 820px;
+		}
+
+		.tocenter{
+			text-align: center;
+			margin:20px 0px 20px 0px;
+		}
+
+		.toright{
+			text-align: right;
+			margin-right: 130px;
 		}
 
 	.footer{

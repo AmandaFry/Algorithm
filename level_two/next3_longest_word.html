@@ -8,30 +8,41 @@
 	<!-- JavaScript code goes here -->
 	<script type="text/javascript">
     
-    //testing the logic 
-    var myinput =  //happy path
+    //testing the logic with different array
+    var mystring = "{}" //happy path min and max not in the end
+    // var arr = [1,5,10,12] //min and max in ends
+    // var arr = [12,5,10,1] //min and max in ends
+    // var arr = [2,2,2]; //same values
+    // var arr = [22,22,25] //same minimum
+    // var arr = [22,22,5] //same maximum
+    // var arr = [3]; //one element
+    // var arr = [-7,-5,-1,-4]; //negavite numbers
+
+    function Brace(mystring){
 
 
-    function myStarter(myinput){
+        for(var i = 0; i<= mystring.length-1; i++){
+            console.log("line ", i);
+        }
 
-
-        //to do:
+        // if (){
+        //     console.log('option 1',); 
+        // }
+        // else{
+        //     console.log('option 2', ); 
+        // }
        
-    }  
-    
-    //calling the function
-    myStarter(myinput);
-
+    }    
 	</script>
    
 </head>
 <body>
 	<div class="container">
         <div class="header">
-            <h2>Algorithms: Level 2 - Intermediate</h2>
-            <h1>Starter</h1>
+            <h2>Algorithms: Level 2 - Intermediate</h1>
+            <h1>Longest Word</h1>
             <div class="descr">
-                <p>Assigment description:</p>
+                <p>Given a string find the longest word in the string.  For example, if the string is "Coding Dojo rocks" then it should print "the longest word is Coding".:</p>
                 <ul>
                     <li>line one</li>
                     <li>line two</li>
@@ -42,11 +53,6 @@
         </div><!-- end of header content-->
         <div class="maincontent">
         	<h2>Select F12 to view console.log results, code and able to debug</h2>
-            <div id="myqoute">
-                <h2>"A day when you did not laugh is a day waisted ...</h2>
-                <h2 class="tocenter">... live well, love much and laugh often"</h2>
-                <h3 class="toright">Amanda Fry</h3>
-            </div>
         </div><!-- end of main content-->
         <div class="footer">
             <p>created by: Amanda Fry</p>
