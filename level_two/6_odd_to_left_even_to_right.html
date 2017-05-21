@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Algorithm files</title>
+	<meta name="author" content="Amanda Fry ">
+	<link rel="stylesheet" type="text/css" href="./AmandaTemplate.css">
+	<!-- JavaScript code goes here -->
+	<script type="text/javascript">
+    
+    //testing the logic 
+    var myinput = [1,2,3,4,5,6] //happy path
+    //var myinput = [1,3,5,7] //all odds
+    //var myinput = [2,4,6,8] //all even
+    //var myinput = [1,3,5,2,4,6,8] //already sorted
+    //var myinput = [1,2,1,3,5,8,7] //swap the second numbers from fornt and back
+    //var myinput = [1,8,5,4] //even number array element swap in the middle
+    //var myinput = [1,8,6,5,4] //odd number element swap next to middle - middle even
+    //var myinput = [1,8,3,5,4] //odd number element swap next to middle - middle odd
+    //var myinput = [1,0,3,4,5,6] //adding 0
+    //var myinput = [-1,-2,-3,-4,-5,-6] //minus
+
+    function oddLeftEvenRight(myinput){
+        var i = 0;
+        var j = myinput.length-1;
+        var temp;
+
+        //this while loop checks for if my counter from the front and back has reached each other
+        while(i < j){
+
+            //looking for the first even number counting from the left
+            //using modulas to see if the number is odd or even, by deviding by 2 the ramnder is other than 0
+            //I also don;'t wan to create an infinate loop so I will stop and j
+            // i< j and I don't need =, because if the last item is odd it is good,
+            //if the last number even it would be to the right also good. 
+            while(myinput[i]%2 != 0 && i < j){
+                i++; //going up moving to right
+            }
+
+            //looking for th even number from the right
+
+            while(myinput[j]%2 ==0 && j > i){
+                j--; //going down moving to left
+            }
+
+            //swaping the even with odd
+            temp = myinput[i];
+            myinput[i] = myinput[j];
+            myinput[j] = temp;
+            //need to move to the next indexes
+            i++; 
+            j--;
+        }
+        
+        return myinput;
+    }  
+    
+    //calling the function
+   console.log(oddLeftEvenRight(myinput));
+
+	</script>
+   
+</head>
+<body>
+	<div class="container">
+        <div class="header">
+            <h2>Algorithms: Level 2 - Intermediate</h2>
+            <h1>Starter</h1>
+            <div class="descr">
+                <p>Assigment description:</p>
+                <ul>
+                    <li>line one</li>
+                    <li>line two</li>
+                    <li>line three</li>
+                    <li>line four</li>
+                </ul>
+            </div>
+        </div><!-- end of header content-->
+        <div class="maincontent">
+        	<h2>Select F12 to view console.log results, code and able to debug</h2>
+            <div id="myqoute">
+                <h2>"A day when you did not laugh is a day waisted ...</h2>
+                <h2 class="tocenter">... live well, love much and laugh often"</h2>
+                <h3 class="toright">Amanda Fry</h3>
+            </div>
+        </div><!-- end of main content-->
+        <div class="footer">
+            <p>created by: Amanda Fry</p>
+            <a class="footerSpace" href="mailto:FeAmandaF@hotmail.com">FeAmandaF@hotmail.com</a>
+            <a href="https://www.linkedin.com/in/amandafry1">Amanda's LinkedIn profile</a>
+        </div><!-- end of footer -->
+      </div><!-- end of container -->
+</body>
+</html>
+

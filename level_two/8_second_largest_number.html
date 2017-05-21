@@ -9,37 +9,18 @@
 	<script type="text/javascript">
     
     //testing the logic 
-    var rArr = ["A", "B", "C", "D", "E", "F"] //happy path
+    var myinput =  //happy path
 
 
-    function rotateArray(rArr, numb){
-        //creating temp and assigning the last value of array to it
-        var temp;
-       
-        //I loop through the number of time is passed in to function
-        while(numb > 0){
-            //need to save off the last charcter before over written 
-            temp = rArr[rArr.length-1];
+    function myStarter(myinput){
 
-            //shift array to rigth, index 0 is same as index 1
-            //i needs to be the second to last one
-            //in comparing i needs to be = to get to the first element as well
-            for(var i = rArr.length-2; i >= 0; i--){
-                rArr[i+1] = rArr[i];
-            }
-            //need to assign the last array index to the first one
-            rArr[0] = temp;
-            //decrement number, otherwise I get and infinite loop. 
-            numb = numb -1;
-        }
 
-        // console.log("out side", rArr);
-        return rArr;
+        //to do:
        
     }  
     
     //calling the function
-    console.log(rotateArray(rArr, 4));
+    myStarter(myinput);
 
 	</script>
    
@@ -48,7 +29,7 @@
 	<div class="container">
         <div class="header">
             <h2>Algorithms: Level 2 - Intermediate</h2>
-            <h1>Pass in an array and number, rotate the array value to the right by the number is given</h1>
+            <h1>Starter</h1>
             <div class="descr">
                 <p>Assigment description:</p>
                 <ul>
