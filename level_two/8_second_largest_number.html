@@ -9,18 +9,52 @@
 	<script type="text/javascript">
     
     //testing the logic 
-    var myinput =  //happy path
+    // var myinput = [1,2,3,4,7] //happy path
+    // var myinput = [4,1,2,3,7] //second largest is first element
+    // var myinput = [1,7,3,4] //second largest is after largest
+    // var myinput = [2,2,2,2] // if all the same number need another check
 
 
-    function myStarter(myinput){
+    function secondLargest(myinput){
+        //setting the largest and second largest to the first element
+        var largest = myinput[0];
+        var secondLargest = myinput[0]; 
+        var err = "There is no second largest number"
 
+        //i start with second element of the array there is no reson to compare the first element with it self
+        for(var i = 1; i < myinput.length; i++){
 
-        //to do:
-       
+            //I need to check is secondLargest is less than current array value
+            //if compared to largest than if the second largest after the largest number it will
+            // never goes here and array[0] may or may not the second largest number
+            if(myinput[i] > secondLargest){
+
+                //need to check inside if the values of arr[i] is the second laregst or the largest
+                if(myinput[i] > largest){
+                    //make second laregest the old largest first
+                    secondLargest = largest
+                    //than repalce the largest value
+                    largest = myinput[i];
+                }
+                else{
+                    //if the laregest still the largest then only increase the second largest
+                    secondLargest = myinput[i];
+                }
+
+            }
+        }
+
+        if (largest == secondLargest){
+            return err; 
+        }
+        else{
+            return secondLargest;  
+        }
+             
     }  
     
     //calling the function
-    myStarter(myinput);
+    console.log(secondLargest(myinput));
 
 	</script>
    
@@ -29,14 +63,12 @@
 	<div class="container">
         <div class="header">
             <h2>Algorithms: Level 2 - Intermediate</h2>
-            <h1>Starter</h1>
+            <h1>Second largest number in an array</h1>
             <div class="descr">
                 <p>Assigment description:</p>
                 <ul>
-                    <li>line one</li>
-                    <li>line two</li>
-                    <li>line three</li>
-                    <li>line four</li>
+                    <li>lNeed two temparry number to store the largest and the 2nd largest number</li>
+                    <li>When arr[i] is larger then large, move the current large to second one and the new largest is the current arr[i]</li>
                 </ul>
             </div>
         </div><!-- end of header content-->
