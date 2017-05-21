@@ -9,18 +9,61 @@
 	<script type="text/javascript">
     
     //testing the logic 
-    var myinput =  //happy path
+    // var myinput = [1,1,0,0,1,1,0] //happy path
+    // var myinput = [1,1,0,0,0,1,1] //moved 0 again
+    var myinput = [1,1,0,0,0,0,0,1,0,0,0,0,1]
 
 
-    function myStarter(myinput){
+    function oneZero(myinput){
+        var count = 0; //will be used to trak the number of zeros
+        var i = 0; //this will be used for while loop
+        var j = myinput.length //used for while loop
 
+        while( i< j){
 
-        //to do:
+            //check to see if array value is 1 or 0
+            if (myinput[i] == 0){
+                //increment counting of 0
+                count = count+1;
+
+                //check to see if this is 2nd 0, we need to shift the array and trunkate
+                if(count >= 2){
+                    // I need to use a new counter for the array shifting
+                    for(var k = i; k < j; k++){
+                        myinput[k] = myinput[k + 1];
+                    }
+                    //take the last element off
+                    myinput.pop();
+                    //size of the array is smaller now needs to decrement j
+                    j--;
+
+                    //Need to test here if the next element is a 0 or 1 
+                    //if yes then keep count at 2 so next loop the array shift again
+                    if(myinput[i] == 0){
+                        count = 2;
+                    }
+                    //not not reset counter
+                    else{
+                        count = 0;
+                    }
+
+                }
+                //we don't need as else here the parent else will take care of the i++?
+                else{
+                    i++; //need to incerment i can't count on the else
+                }
+            }
+            else{
+               i++; //if array value 1 then move to next index
+            } 
+                
+        }
+        return myinput;
        
     }  
     
     //calling the function
-    myStarter(myinput);
+    console.log(oneZero(myinput));
 
 	</script>
    
@@ -29,14 +72,15 @@
 	<div class="container">
         <div class="header">
             <h2>Algorithms: Level 2 - Intermediate</h2>
-            <h1>Starter</h1>
+            <h1>One zero in the row</h1>
             <div class="descr">
                 <p>Assigment description:</p>
                 <ul>
-                    <li>line one</li>
-                    <li>line two</li>
-                    <li>line three</li>
-                    <li>line four</li>
+                    <li>Given an array of 1 and 0 I need to remove all the second or more zeros, multiple 1 are fine</li>
+                    <li>Exmaple 100110 will be 10110 or 11000011 will be 11011</li>
+                    <li>I should use a while loop because the array length will change</li>
+                    <li>Use pop() to remove the end of the array element</li>
+                    <li>Check the new element if it will be 0 or 1, if zeror will have to shift array again</li>
                 </ul>
             </div>
         </div><!-- end of header content-->
