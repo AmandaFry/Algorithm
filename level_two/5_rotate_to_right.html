@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Algorithm files</title>
+	<meta name="author" content="Amanda Fry ">
+	<link rel="stylesheet" type="text/css" href="./AmandaTemplate.css">
+	<!-- JavaScript code goes here -->
+	<script type="text/javascript">
+    
+    //testing the logic 
+    var rArr = ["A", "B", "C", "D", "E", "F"] //happy path
+
+
+    function rotateArray(rArr, numb){
+        //creating temp and assigning the last value of array to it
+        var temp = rArr[rArr.length-1]
+        console.log(temp); //just checking what is it
+
+        //I loop through the number of time is passed in to function
+        while(numb > 0){
+            //need to reset the last charcter each time before looping again
+            temp = rArr[rArr.length-1];
+
+            console.log(rArr)
+            //shift array to rigth, index 0 is same as index 1
+            for(var i = rArr.length-2; i >= 0; i--){
+                rArr[i+1] = rArr[i];
+            }
+            //need to assign the last array index to the first one
+            rArr[0] = temp;
+            //decrement number, otherwise I get and infinite loop. 
+            numb = numb -1;
+        }
+
+        // console.log("out side", rArr);
+        return rArr;
+       
+    }  
+    
+    //calling the function
+    console.log(rotateArray(rArr, 4));
+
+	</script>
+   
+</head>
+<body>
+	<div class="container">
+        <div class="header">
+            <h2>Algorithms: Level 2 - Intermediate</h2>
+            <h1>Pass in an array and number, rotate the array value to the right by the number is given</h1>
+            <div class="descr">
+                <p>Assigment description:</p>
+                <ul>
+                    <li>line one</li>
+                    <li>line two</li>
+                    <li>line three</li>
+                    <li>line four</li>
+                </ul>
+            </div>
+        </div><!-- end of header content-->
+        <div class="maincontent">
+        	<h2>Select F12 to view console.log results, code and able to debug</h2>
+            <div id="myqoute">
+                <h2>"A day when you did not laugh is a day waisted ...</h2>
+                <h2 class="tocenter">... live well, love much and laugh often"</h2>
+                <h3 class="toright">Amanda Fry</h3>
+            </div>
+        </div><!-- end of main content-->
+        <div class="footer">
+            <p>created by: Amanda Fry</p>
+            <a class="footerSpace" href="mailto:FeAmandaF@hotmail.com">FeAmandaF@hotmail.com</a>
+            <a href="https://www.linkedin.com/in/amandafry1">Amanda's LinkedIn profile</a>
+        </div><!-- end of footer -->
+      </div><!-- end of container -->
+</body>
+</html>
+
