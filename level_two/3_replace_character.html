@@ -9,16 +9,28 @@
 	<script type="text/javascript">
     
     //testing the logic 
-    var myinput =  //happy path
+    var myArr = ["H","e","l","l","o",";","m","r"]; //happy path
+    // var myArr = [";", "t", ","];
+    // var myArr = [";"];
+    // var myArr = ["H","e","l","l","o"];
 
 
-    function comaReplace(mystring){
+    function comaReplace(myArr){
 
-        //to do:
+        for (var i = 0; i < myArr.length ; i++){
+
+            if(myArr[i] == ";"){
+                console.log(myArr[i])
+                myArr[i] = ",";
+                console.log(myArr[i])
+            }
+        }
+
+        return myArr;
     } 
 
     //
-    comaReplace(mystring)  
+    console.log(comaReplace(myArr));
 	</script>
    
 </head>
@@ -30,7 +42,13 @@
             <div class="descr">
                 <p>Assigment description:</p>
                 <ul>
-                    <li>Replace ; with , in a given string</li>
+                    <li>Replace ; with , in a given array</li>
+                    <li>break down</li>
+                    <li>String is kind of an array, but not functioning fully like an aray in C#</li>
+                    <li>I can iterate through the array and compare each index value to ;</li>
+                    <li>if it is ; replace it with ,</li>
+                    <li>I be using for loop to iterate through the array</li>
+                    <li><strong>Note:</strong> The assignment was for string, I need to convert it to array then back to string. Do it later.</li>
                 </ul>
             </div>
         </div><!-- end of header content-->

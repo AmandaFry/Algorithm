@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Algorithm files</title>
+	<meta name="author" content="Amanda Fry ">
+	<link rel="stylesheet" type="text/css" href="./AmandaTemplate.css">
+	<!-- JavaScript code goes here -->
+	<script type="text/javascript">
+    
+      
+
+    function basicCalc(a,b,oper){
+        var result;
+
+        switch(oper){
+            case "+":
+                result = a+b;
+                break;
+            case "-":
+                result = a-b;
+                break;
+            case "*":
+                result = a*b;
+                break;
+            case "/":
+                result = a/b;
+                break;
+            default:
+                result = "bad operation"
+        }
+       
+       return result;
+    }  
+    
+    //calling the function and testing logic
+    console.log(basicCalc(4,2,"+")); //happy path
+    console.log(basicCalc(4,2,"-")); //happy path
+    console.log(basicCalc(4,2,"*")); //happy path
+    console.log(basicCalc(4,2,"/")); //happy path
+    console.log(basicCalc(4,2,"h")); //error case
+    console.log(basicCalc(4.3,2,"+")); //floting point numbers
+    console.log(basicCalc(4, -2,"+")); //minus number
+    console.log(basicCalc(0, -2,"+")); // zero and minus
+    console.log(basicCalc(0, 2,"/")); // zero
+    console.log(basicCalc("t", 2,"+")); //not number
+    console.log(basicCalc("t", 2,"-")); //not number
+    console.log(basicCalc("t", 2,"*")); //not number
+    console.log(basicCalc("t", 2,"/")); //not number
+
+
+	</script>
+   
+</head>
+<body>
+	<div class="container">
+        <div class="header">
+            <h2>Algorithms: Level 2 - Intermediate</h2>
+            <h1>Basic calculator - given two numbers and operator execute the operation</h1>
+            <div class="descr">
+                <p>Assigment description:</p>
+                <ul>
+                    <li>Use a switch statement for each operation</li>
+                </ul>
+            </div>
+        </div><!-- end of header content-->
+        <div class="maincontent">
+        	<h2>Select F12 to view console.log results, code and able to debug</h2>
+            <div id="myqoute">
+                <h2>"A day when you did not laugh is a day waisted ...</h2>
+                <h2 class="tocenter">... live well, love much and laugh often"</h2>
+                <h3 class="toright">Amanda Fry</h3>
+            </div>
+        </div><!-- end of main content-->
+        <div class="footer">
+            <p>created by: Amanda Fry</p>
+            <a class="footerSpace" href="mailto:FeAmandaF@hotmail.com">FeAmandaF@hotmail.com</a>
+            <a href="https://www.linkedin.com/in/amandafry1">Amanda's LinkedIn profile</a>
+        </div><!-- end of footer -->
+      </div><!-- end of container -->
+</body>
+</html>
+
