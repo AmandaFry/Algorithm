@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Algorithm files</title>
+	<meta name="author" content="Amanda Fry ">
+	<link rel="stylesheet" type="text/css" href="./AmandaTemplate.css">
+	<!-- JavaScript code goes here -->
+	<script type="text/javascript">
+    
+     function testDictionary(){
+        this.add = add;
+        this.datastore = [];
+        this.find = find;
+        this.remove = remove;
+        this.showAll = showAll;
+        this.count = count;
+        this.changeAll = changeAll;
+        this.showAllsorted = showAllsorted;
+    }
+    function add(key, value){
+        this.datastore[key] = value;
+    } 
+
+    function find(key){
+        return this.datastore[key];
+    }
+
+    function remove(key){
+        delete this.datastore[key];
+    }
+
+
+    function showAll(){
+           for (var key in this.datastore) { 
+            console.log(key + " : " + this.datastore[key]);
+        }
+    }
+
+    function count(){
+        var n = 0;
+        for (var key in this.datastore){
+            n++;
+        }
+        return n;
+    }
+
+  
+    function changeAll(){
+        for (var key in this.datastore){
+            this.add(key, "1");
+        }
+    }
+
+    //not causing error, but does not work either
+    function showAllsorted(){
+           for (var key in this.datastore.sort()) { 
+            console.log(key + " : " + this.datastore[key]);
+        }
+    }
+
+    var pbook = new testDictionary(); 
+    console.log("The original dictinary")
+    pbook.add("Tim", "934");   
+    pbook.add("Mike","123"); 
+    pbook.add("David", "345"); 
+    pbook.add("Cynthia", "456");
+    pbook.showAll();
+    console.log("Show me the value for David :" + pbook.find("David"));
+    pbook.add("Mike", "678"); // this one replaced the key value instead of adding more to key value
+    console.log("After adding aka updating a value for a key");
+    pbook.showAll();
+    pbook.remove("Mike");
+    console.log("After removing Mike");
+    pbook.showAll();
+    console.log(pbook.count());
+    pbook.changeAll();
+    pbook.showAll();
+    //does not sort
+    console.log("sorted - not");
+    pbook.showAllsorted();
+
+	</script>
+   
+</head>
+<body>
+	<div class="container">
+        <div class="header">
+            <h2>Algorithms: Level 2 - Intermediate</h2>
+            <h1>This is basic sample of creating, modifing and reading in key value pair - in short working with dictinary in javaScript</h1>
+            <div class="descr">
+                <p>Assigment description:</p>
+                <ul>
+                    <li>remember key is always unique, if reusing it then the value will be updated</li>
+                    <li>add</li>
+                    <li>find</li>
+                    <li>remove - delete</li>
+                    <li>show all</li>
+                </ul>
+            </div>
+        </div><!-- end of header content-->
+        <div class="maincontent">
+        	<h2>Select F12 to view console.log results, code and able to debug</h2>
+            <div id="myqoute">
+                <h2>"A day you didn't laugh is a day waisted ...</h2>
+                <h2 class="tocenter">... live well, love much and laugh often"</h2>
+                <h3 class="toright">Amanda Fry</h3>
+            </div>
+        </div><!-- end of main content-->
+        <div class="footer">
+            <p>created by: Amanda Fry</p>
+            <a class="footerSpace" href="mailto:FeAmandaF@hotmail.com">FeAmandaF@hotmail.com</a>
+            <a href="https://www.linkedin.com/in/amandafry1">Amanda's LinkedIn profile</a>
+        </div><!-- end of footer -->
+      </div><!-- end of container -->
+</body>
+</html>
+
