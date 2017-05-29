@@ -9,17 +9,63 @@
 	<script type="text/javascript">
     
     //testing the logic 
-    // var myinput = [1,2,3,4,7] //happy path
-    // var myinput = [4,1,2,3,7] //second largest is first element
-    // var myinput = [1,7,3,4] //second largest is after largest
-    // var myinput = [2,2,2,2] // if all the same number need another check
+    //happy paths
+    var myinput = [1,2,6,3,7,5]
+    // var myinput = [1,2,3,4,7] //SL (second largest) is before L (largest)
+    // var myinput = [4,1,2,1] //SL after L
+
+    //SL and L is next to each other in the ends
+    // var myinput = [7,6,5,2,1];
+    // var myinput = [6,7,5,2,1];
+    // var myinput = [5,2,1,7,6];
+    // var myinput = [5,2,1,6,7];
+
+    //duplicate numbers for L and SL
+    // var myinput = [1,2,3,5,3,1]; 
+    // var myinput = [2,3,2,2];
+    // var myinput = [3,2,2,2];
+    // var myinput = [2,2,2,3];
+
+    //there was a bug before, but fixed it. I needed a condition when L is == to L
+    // var myinput = [1,2,3,5,1,5,5]; //there is an error not sure why
+    // var myinput = [2,3,2,3,2,3]; //same error as above
+
+    //short but valid
+    // var myinput = [1,2];
+    // var myinput = [2,1];
+
+    //negative, zero combination
+    // var myinput = [0,-7,-3,-2];
+    // var myinput = [-7, 0, 1, -3];
+    // var myinput = [2, 0, 0];
+    // var myinput = [-5,-6,-4,-1];
+
+    // floating points
+    // var myinput = [4.3, 4.0, 4.1];
+
+    //errors too shorts, same numbers, not numbers
+    // var myinput = [];
+    // var myinput = [0];
+    // var myinput = [2];
+    // var myinput = [2,2]; //two is enough but smae numbers
+    // var myinput = [2,2,2,2];
+
+    //not numbers - look into how to break out of this
+    // var myinput = ["A",1,2,4,"B"];
+    // var myinput = ["a", "b", "c"]; //javaScript uisng ASCII numbers and still does the work
 
 
     function secondLargest(myinput){
         //setting the largest and second largest to the first element
         var largest = myinput[0];
-        var secondLargest = myinput[0]; 
+        var secondLargest = Number.MIN_SAFE_INTEGER; //need this to be the lowest possiable integer for 0, negative and for the SL to work in general
         var err = "There is no second largest number"
+        var err2 = "Please provide at least two numbers"
+
+        //takes care of errors when array is too short
+        if(myinput.length <2){
+            return err2;
+        }
 
         //i start with second element of the array there is no reson to compare the first element with it self
         for(var i = 1; i < myinput.length; i++){
@@ -36,6 +82,11 @@
                     //than repalce the largest value
                     largest = myinput[i];
                 }
+                else if(myinput[i] == largest){
+                    //I needed to add this because if there was more than one largest then it went to else and set SL to L
+                    //I just need to skip the else
+                    continue;
+                }
                 else{
                     //if the laregest still the largest then only increase the second largest
                     secondLargest = myinput[i];
@@ -44,6 +95,7 @@
             }
         }
 
+        //takes care of erros when SL and L is the same
         if (largest == secondLargest){
             return err; 
         }
